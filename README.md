@@ -24,10 +24,10 @@ yarn add negaposi
 ### CLI
 
 ```sh
-$ echo "今日は良い天気です。" | yarn negaposi
-0.5 😃
 $ echo "今日は悪い天気です。" | yarn negaposi
 -0.5 😧
+$ echo "今日は良い天気です。" | yarn negaposi
+0.5 😃
 ```
 
 ### Module
