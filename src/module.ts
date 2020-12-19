@@ -1,20 +1,27 @@
-import { tokenize } from "kuromojin";
+import { dictionary } from "./dictionary.js";
 
 interface AnalyzeNegaposiProps {
   text: string;
 }
 
-/** Analyze negaposi of Japanese text.  */
-const analyzeNegaposi = async ({ text }: AnalyzeNegaposiProps) => {
-  const tokens = await tokenize(text);
+const analyzeNegaposi = ({ text }: AnalyzeNegaposiProps) => {
+  const normalizedText = text.normalize("NFKC");
 
-  let count = 0;
+  let parameter = 0;
+  let score = 0;
 
-  tokens.forEach(({ surface_form }) => {
-    console.log(surface_form);
+  dictionary.forEach(({ word, point }) => {
+    const normalizedWord = word.normalize("NFKC");
+
+    let index = -1;
+
+    while ((index = normalizedText.indexOf(normalizedWord, index + 1)) !== -1) {
+      parameter++;
+      score += point;
+    }
   });
 
-  return count / tokens.length;
+  return parameter === 0 ? 0 : score / parameter;
 };
 
 export { analyzeNegaposi };
