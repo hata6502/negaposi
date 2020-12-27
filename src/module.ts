@@ -18,6 +18,10 @@ const analyzeNegaposi = ({ text }: AnalyzeNegaposiProps) => {
   let score = 0;
 
   dictionary.forEach(({ word, point }) => {
+    if (point === 0) {
+      return;
+    }
+
     const normalizedWord = word.normalize("NFKC");
 
     let index = -1;
