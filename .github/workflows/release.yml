@@ -5,6 +5,10 @@ on:
       - main
 jobs:
   release:
+    needs:
+      - analyze
+      - lint
+      - test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
