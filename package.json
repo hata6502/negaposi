@@ -10,7 +10,6 @@
   "repository": "https://github.com/hata6502/negaposi",
   "license": "MIT",
   "author": "Tomoyuki Hata <hato6502@gmail.com>",
-  "type": "module",
   "main": "dist/module.js",
   "bin": {
     "negaposi": "dist/cli.js"
