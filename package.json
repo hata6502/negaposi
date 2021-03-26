@@ -8,6 +8,10 @@
     "nlp"
   ],
   "repository": "https://github.com/hata6502/negaposi",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/hata6502"
+  },
   "license": "MIT",
   "author": "Tomoyuki Hata <hato6502@gmail.com>",
   "main": "dist/module.js",
